@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #fff7fb;
+    color: #4a2538;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fredoka', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+@keyframes sticker-pop {
+  0% {
+    transform: scale(0.3) rotate(-14deg);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.22) rotate(6deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.92) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes counter-shine {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  40% {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--drift, 20px), 105vh, 0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.animate-sticker-pop {
+  animation: sticker-pop 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-counter-shine {
+  animation: counter-shine 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+.animate-confetti {
+  animation: confetti-fall var(--duration, 3.2s) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sticker-pop,
+  .animate-counter-shine,
+  .animate-float,
+  .animate-confetti {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Mi camino al gym 🎀",
+  "description": "Calendario tierno de asistencia al gimnasio para cumplir la meta de 30 venidas entre el 21 de octubre y el 21 de diciembre de 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
